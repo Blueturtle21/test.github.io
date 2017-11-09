@@ -320,15 +320,6 @@
     button.link:hover {
       padding-bottom: 6px;
     }
-    @media only screen and (max-width: 560px) {
-      h1 {
-        font-size: 40px;
-        width: 240px;
-      }
-      .container {
-        top: calc((100% - 480px) / 2);
-      }
-    }
 
     /* Behind the Scenes */
     header {
@@ -433,6 +424,23 @@
       margin-bottom: .5rem;
       display: block;
       width: fit-content;
+    }
+    
+    @media only screen and (max-width: 560px) {
+      h1 {
+        font-size: 40px;
+        width: 240px;
+      }
+      .container {
+        top: calc((100% - 480px) / 2);
+      }
+      .container-600 {
+        margin: 0 1.5rem;
+      }
+      section {
+        margin: 0;
+        padding: 4rem 0;
+      }
     }
 
   </style>
