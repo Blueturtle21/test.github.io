@@ -250,7 +250,6 @@
       transition: all .5s ease-in-out;
       box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
       z-index: 2;
-      transition: height 999999s;
     }
     #behind-the-screen {
       background: white;
@@ -266,7 +265,6 @@
       right: 0;
       left: 0;
       top: calc((100% - 432px) / 2);
-      transition: top 999999s;
     }
     .container-buttons {
       margin: 2rem auto 6rem auto;
@@ -472,5 +470,14 @@
         // start scrolling
         scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
     }
+  </script>
+  <script>
+    // Viewport Height
+    function calcVH() {
+      var vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      document.getElementById("selector").setAttribute("style", "height:" + vH + "px;");
+    }
+    calcVH();
+    window.addEventListener('onorientationchange', calcVH, true);
   </script>
 </html>
