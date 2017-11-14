@@ -7,7 +7,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-109604745-1');
 </script>
     <title>Scott McCombie - Digital Marketing Student</title>
@@ -172,6 +171,12 @@
             <h3>Google Analytics</h3>
             <p>I installed Google Analytics as a way to measure my site's performance and track potential conversions.</p>
           </div>
+          <div class="container-960">
+            <img srcset="
+              google-analytics.png 1x,
+              google-analytics@2x.png 2x
+            " alt="page speed after">
+          </div>
         </section>
         <section>
           <div class="container-600">
@@ -287,6 +292,10 @@
       max-width: 600px;
       margin: 0 auto;
     }
+    .container-960 {
+      max-width: 960px;
+      margin: 0 auto;
+    }
     a {
       text-decoration: none;
       line-height: 18px;
@@ -337,7 +346,6 @@
     button.link:hover {
       padding-bottom: 6px;
     }
-
     /* Behind the Scenes */
     header {
       background: #0A0F0F;
@@ -442,7 +450,7 @@
       display: block;
       width: fit-content;
     }
-    
+
     @media only screen and (max-width: 560px) {
       h1 {
         font-size: 40px;
@@ -460,6 +468,15 @@
       }
     }
 
+    @media only screen and (max-width: 720px) {
+      .container-960 {
+        margin: 0 1.5rem;
+        overflow: hidden;
+      }
+      .container-960 img {
+        min-width: 720px;
+      }
+    }
   </style>
   <script type="text/javascript">
       window.smoothScroll = function(target) {
@@ -469,13 +486,11 @@
             if (!scrollContainer) return;
             scrollContainer.scrollTop += 1;
         } while (scrollContainer.scrollTop == 0);
-
         var targetY = 0;
         do { //find the top of target relatively to the container
             if (target == scrollContainer) break;
             targetY += target.offsetTop;
         } while (target = target.offsetParent);
-
         scroll = function(c, a, b, i) {
             i++; if (i > 30) return;
             c.scrollTop = a + (b - a) / 30 * i;
